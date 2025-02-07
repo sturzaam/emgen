@@ -1,0 +1,30 @@
+[package]
+name = "emgen"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tiberius = "0.12.3"
+futures = "0.3.30"
+tokio = { version = "1", features = ["full"] }
+convert_case = "0.5"
+prettyplease = "0.2.29"
+syn = { version = "2", default-features = false, features = ["full", "parsing"] }
+tokio-util = { version = "0.7", default-features = false, features = ["compat"] }
+tracing = "0.1.41"
+
+[dev-dependencies]
+insta = { version = "1.42.1", features = ["yaml"] }
+sea-orm = { version = "1.0.0", features = ["runtime-async-std-native-tls"] }
+
+[profile.dev.package]
+insta.opt-level = 3
+similar.opt-level = 3
+
+[[test]]
+name = "unit"
+path = "tests/unit/mod.rs"
+
+[[test]]
+name = "integration"
+path = "tests/integration/mod.rs"
