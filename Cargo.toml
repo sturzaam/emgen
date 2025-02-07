@@ -2,6 +2,11 @@
 name = "emgen"
 version = "0.1.0"
 edition = "2021"
+description = "Generate Rust Entity Models from MSSQL tables with EMGen."
+license = "MIT"
+documentation = ""
+homepage = ""
+repository = "https://github.com/sturzaam/emgen"
 
 [dependencies]
 tiberius = "0.12.3"
@@ -15,7 +20,6 @@ tracing = "0.1.41"
 
 [dev-dependencies]
 insta = { version = "1.42.1", features = ["yaml"] }
-sea-orm = { version = "1.0.0", features = ["runtime-async-std-native-tls"] }
 
 [profile.dev.package]
 insta.opt-level = 3
