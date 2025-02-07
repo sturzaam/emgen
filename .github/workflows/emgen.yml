@@ -1,0 +1,24 @@
+name: EMGen CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        database:
+          - 2019
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions-rs/toolchain@v1
+      - name: Start SQL Server ${{matrix.database}}
+        run: DOCKER_BUILDKIT=1 docker-compose -f docker-compose.yml up -d mssql-${{matrix.database}}
+
+      - name: Run tests
+        run: cargo test
