@@ -4,8 +4,7 @@ version = "0.1.0"
 edition = "2021"
 description = "Generate Rust Entity Models from MSSQL tables with EMGen."
 license = "MIT"
-documentation = ""
-homepage = ""
+readme = "README.md"
 repository = "https://github.com/sturzaam/emgen"
 
 [dependencies]
