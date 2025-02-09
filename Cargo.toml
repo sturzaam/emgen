@@ -16,6 +16,8 @@ prettyplease = "0.2.29"
 syn = { version = "2", default-features = false, features = ["full", "parsing"] }
 tokio-util = { version = "0.7", default-features = false, features = ["compat"] }
 tracing = "0.1.41"
+thiserror = "2.0.11"
+async-trait = "0.1.86"
 
 [dev-dependencies]
 insta = { version = "1.42.1", features = ["yaml"] }
