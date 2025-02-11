@@ -1,6 +1,6 @@
 [package]
 name = "emgen"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "Generate Rust Entity Models from MSSQL tables with EMGen."
 license = "MIT"
