@@ -23,7 +23,7 @@ jobs:
       - name: Start SQL Server ${{matrix.database}}
         run: DOCKER_BUILDKIT=1 docker compose up -d mssql-${{matrix.database}}
       - name: Run tests
-        run: cargo test
+        run: cargo test -- --test-threads=1
       - name: Stop SQL Server ${{matrix.database}}
         if: always()
         run: docker compose down mssql-${{matrix.database}}
